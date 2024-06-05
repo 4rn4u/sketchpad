@@ -1,3 +1,43 @@
 body {
-    color: #1F3044;
+    background-color: #1F3044;
+    margin: 0px;
+}
+
+.title{
+    margin: 0px;
+    background-color: #646C79;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.arnau {
+    font-style: italic;
+}
+
+.big-container{
+    margin: 100px;
+    width: auto;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #646C79;
+    padding: 30px;
+    gap: 50px;
+}
+
+.left-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    background-color: #FB9039;
+}
+
+.div-container{
+    background-color: #FB9039;
 }
