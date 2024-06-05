@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sketchpad</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <header class="title">
@@ -22,16 +23,15 @@
                 <option value="32x32">32x32</option>
                 <option value="64x64">64x64</option>
             </select>
-            <button class="draw">Draw</button>
+            <button id="draw">Draw</button>
             <button class="erase">Erase</button>
             <button class="clear">Clear</button>
         </div>
         <div class = "big-div-container">
-            <div class = "div-container">
+            <div id = "div-container">
             </div>
         </div>
     </div>
     
 </body>
-<script src="script.js"></script>
 </html>

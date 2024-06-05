@@ -66,9 +66,19 @@ header {
     align-items: center;
 }
 
-.div-container{
+#div-container{
     background-color: #ffffff;
     width: 350px;
     height: 400px;
-    display: block;
+    display: grid;
+    box-sizing: border-box; /* Include padding and border in the width/height */
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+.div-created{
+    background-color: rgb(0, 191, 255); /* Background color */
+    border: 1px solid #ccc; /* Border for each div */
+    box-sizing: border-box; /* Include border in size */
+    border: 1px solid #000;
 }

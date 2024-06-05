@@ -1,6 +1,5 @@
-
+let numDiv = document.querySelector("#size");
 function selectNumDiv(){
-    let numDiv = document.querySelector("size");
     let selectedValue = numDiv.value;
     switch (selectedValue){
         case "16x16":
@@ -9,23 +8,31 @@ function selectNumDiv(){
             return 32;
         case "64x64":
             return 64;
+        case "...":
+            return 0;
         default:
             return 0;
     }
 }
 
-let drawButton = document.querySelector("draw");
+let drawButton = document.querySelector("#draw");
 
 drawButton.addEventListener("click", () => {
-    drawDivs(selectNumDiv());
+    let nump = selectNumDiv();
+    drawDivs(nump);
 
 });
 
+
+
 function drawDivs(num){
-    for(let i = 0; i<num; i++){
-        for(let j = 0; j<num; j++){
-            let div = document.createElement("div");
-            div.
-        }
+    let divContainer = document.querySelector("#div-container")
+    divContainer.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+    divContainer.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+    divContainer.innerHTML = '';
+    for(let i = 0; i<num*num; i++){
+        const newdiv = document.createElement("div");
+        newdiv.classList.add("div-created");
+        divContainer.appendChild(newdiv);
     }
 }
