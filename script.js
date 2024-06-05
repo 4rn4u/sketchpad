@@ -9,6 +9,8 @@ function selectNumDiv(){
             return 32;
         case "64x64":
             return 64;
+        default:
+            return 0;
     }
 }
 
