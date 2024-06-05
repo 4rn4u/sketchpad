@@ -24,7 +24,8 @@ drawButton.addEventListener("click", () => {
 function drawDivs(num){
     for(let i = 0; i<num; i++){
         for(let j = 0; j<num; j++){
-
+            let div = document.createElement("div");
+            div.
         }
     }
 }
