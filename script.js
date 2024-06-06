@@ -1,3 +1,6 @@
+let mouseDown = false;
+let paintMode = "normal";
+
 let numDiv = document.querySelector("#size");
 function selectNumDiv(){
     let selectedValue = numDiv.value;
@@ -27,6 +30,8 @@ function clear(){
     let nump = selectNumDiv();
     drawDivs(nump);
 }
+let divContainerOut = document.querySelector("#div-container");
+divContainerOut.addEventListener("mousedown", () => mouseDown = true);
 
 let clearBut = document.querySelector("clear");
 
@@ -35,7 +40,7 @@ clearBut.addEventListener("click", () => {
 })
 
 function paintCell(cell){
-    cell.style.backgroundColor("red");
+    cell.style.backgroundColor = "rgba(0, 0, 0, 255)";
 }
 
 function drawDivs(num){
@@ -47,20 +52,14 @@ function drawDivs(num){
         const newdiv = document.createElement("div");
         newdiv.classList.add("div-created");
         newdiv.style.backgroundColor = "rgba(255, 255, 255, 0)";
-        newdiv.addEventListener("click", (event) => {
+        newdiv.addEventListener("mousedown", (event) => {
             paintCell(event.target)
         });
-        /*newdiv.addEventListener("mouseover", (event) => {
+        newdiv.addEventListener("mouseover", (event) => {
             if(mouseDown){
                 paintCell(event.target)
             }
-        })*/
+        })
         divContainer.appendChild(newdiv);
     }
-}
-
-
-function clear(){
-    let nump = selectNumDiv();
-    drawDivs(nump);
 }
