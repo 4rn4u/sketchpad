@@ -77,8 +77,7 @@ header {
 }
 
 .div-created{
-    background-color: rgb(0, 191, 255); /* Background color */
-    border: 0.5px solid #ccc; /* Border for each div */
-    box-sizing: border-box; /* Include border in size */
-    border: 0.5px solid #000;
+    border: 1px solid lightgray;
+    user-select: none;
 }
+

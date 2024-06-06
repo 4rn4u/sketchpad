@@ -23,7 +23,20 @@ drawButton.addEventListener("click", () => {
 
 });
 
+function clear(){
+    let nump = selectNumDiv();
+    drawDivs(nump);
+}
 
+let clearBut = document.querySelector("clear");
+
+clearBut.addEventListener("click", () => {
+    clear();
+})
+
+function paintCell(cell){
+    cell.style.backgroundColor("red");
+}
 
 function drawDivs(num){
     let divContainer = document.querySelector("#div-container")
@@ -33,6 +46,21 @@ function drawDivs(num){
     for(let i = 0; i<num*num; i++){
         const newdiv = document.createElement("div");
         newdiv.classList.add("div-created");
+        newdiv.style.backgroundColor = "rgba(255, 255, 255, 0)";
+        newdiv.addEventListener("click", (event) => {
+            paintCell(event.target)
+        });
+        /*newdiv.addEventListener("mouseover", (event) => {
+            if(mouseDown){
+                paintCell(event.target)
+            }
+        })*/
         divContainer.appendChild(newdiv);
     }
+}
+
+
+function clear(){
+    let nump = selectNumDiv();
+    drawDivs(nump);
 }
