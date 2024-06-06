@@ -18,6 +18,10 @@ function selectNumDiv(){
     }
 }
 
+let divContainerOut = document.querySelector("#div-container");
+divContainerOut.addEventListener("mousedown", () => mouseDown = true);
+window.addEventListener("mouseup", () => mouseDown = false);
+
 let drawButton = document.querySelector("#draw");
 
 drawButton.addEventListener("click", () => {
@@ -27,18 +31,19 @@ drawButton.addEventListener("click", () => {
 });
 
 function clear(){
-    let nump = selectNumDiv();
-    drawDivs(nump);
+    /*divContainerOut.childNodes.forEach((cell) => {
+        cell.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    });*/
 }
-let divContainerOut = document.querySelector("#div-container");
-divContainerOut.addEventListener("mousedown", () => mouseDown = true);
-window.addEventListener("mouseup", () => mouseDown = false);
 
-let clearBut = document.querySelector("clear");
+
+let clearBut = document.querySelector("#clear");
 
 clearBut.addEventListener("click", () => {
-    clear();
-})
+    divContainerOut.innerHTML = '';
+    let nump = selectNumDiv();
+    drawDivs(nump);
+});
 
 function paintCell(cell){
     cell.style.backgroundColor = "rgba(0, 0, 0, 255)";
