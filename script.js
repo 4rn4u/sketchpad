@@ -32,6 +32,7 @@ function clear(){
 }
 let divContainerOut = document.querySelector("#div-container");
 divContainerOut.addEventListener("mousedown", () => mouseDown = true);
+window.addEventListener("mouseup", () => mouseDown = false);
 
 let clearBut = document.querySelector("clear");
 
