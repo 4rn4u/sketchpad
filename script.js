@@ -6,11 +6,11 @@ function selectNumDiv(){
     let selectedValue = numDiv.value;
     switch (selectedValue){
         case "16x16":
-            return 16;
+            return drawDivs(16);
         case "32x32":
-            return 32;
+            return drawDivs(32);
         case "64x64":
-            return 64;
+            return drawDivs(64);
         case "...":
             return 0;
         default:
@@ -23,18 +23,18 @@ divContainerOut.addEventListener("mousedown", () => mouseDown = true);
 window.addEventListener("mouseup", () => mouseDown = false);
 
 let drawButton = document.querySelector("#draw");
+let eraseButton = document.querySelector("#erase");
+
+let isErasing = false;
+
+eraseButton.addEventListener("click" , () => {
+    isErasing = !isErasing;
+})
 
 drawButton.addEventListener("click", () => {
-    let nump = selectNumDiv();
-    drawDivs(nump);
+    isErasing = false;
 
 });
-
-function clear(){
-    /*divContainerOut.childNodes.forEach((cell) => {
-        cell.style.backgroundColor = "rgba(255, 255, 255, 0)";
-    });*/
-}
 
 let clearBut = document.querySelector("#clear");
 
@@ -45,7 +45,12 @@ clearBut.addEventListener("click", () => {
 });
 
 function paintCell(cell){
-    cell.style.backgroundColor = "rgba(0, 0, 0, 255)";
+    if (isErasing){
+        cell.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    } else {
+        cell.style.backgroundColor = "rgba(0, 0, 0, 255)";
+    }
+    
 }
 
 function drawDivs(num){
