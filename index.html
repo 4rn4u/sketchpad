@@ -8,30 +8,34 @@
     <script src="script.js" defer></script>
 </head>
 
-<header class="title">
-    <h1>Sketchpad</h1>
-    <h3 class="arnau">by 4rn4u!</h3>
+<header class="header">
+    <div id="sketchpad">
+         <h1>Sketchpad</h1>
+    </div>
+    <div class="right-buttons">
+        <p>size:</p>
+        <select id="size">
+            <option value="...">...</option>
+            <option value="16x16">16x16</option>
+            <option value="32x32">32x32</option>
+            <option value="64x64">64x64</option>
+        </select>
+        <button id="draw">
+            <img class="draw" src="assets/pencil.svg">
+        </button>
+        <button id="erase">
+            <img class="erase" src="assets/eraser.svg">
+        </button>
+        <button id="clear">
+            <img  class="clear" src="assets/clear.svg">
+        </button>
+    </div>
 </header>
 
 <body class="bodys">
-    <div class="big-container">
-        <div class="left-container">
-            <h5>Please select a size:</h5>
-            <select id="size">
-                <option value="...">...</option>
-                <option value="16x16">16x16</option>
-                <option value="32x32">32x32</option>
-                <option value="64x64">64x64</option>
-            </select>
-            <button id="draw">Draw</button>
-            <button id="erase">Erase</button>
-            <button id="clear">Clear</button>
-        </div>
         <div class = "big-div-container">
             <div id = "div-container">
             </div>
-        </div>
-    </div>
-    
+        </div>  
 </body>
 </html>
