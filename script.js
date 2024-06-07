@@ -36,7 +36,6 @@ function clear(){
     });*/
 }
 
-
 let clearBut = document.querySelector("#clear");
 
 clearBut.addEventListener("click", () => {
