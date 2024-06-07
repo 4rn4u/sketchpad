@@ -6,11 +6,11 @@ function selectNumDiv(){
     let selectedValue = numDiv.value;
     switch (selectedValue){
         case "16x16":
-            return drawDivs(16);
+            return 16;
         case "32x32":
-            return drawDivs(32);
+            return 32;
         case "64x64":
-            return drawDivs(64);
+            return 64;
         case "...":
             return 0;
         default:
@@ -32,7 +32,13 @@ eraseButton.addEventListener("click" , () => {
 })
 
 drawButton.addEventListener("click", () => {
-    isErasing = false;
+    if (divContainerOut.querySelectorAll('div').length === 0) {
+        let num = selectNumDiv();
+        drawDivs(num);
+        isErasing = false;
+    } else {
+        isErasing = false;
+    }
 
 });
 
