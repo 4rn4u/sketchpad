@@ -35,10 +35,8 @@ drawButton.addEventListener("click", () => {
     if (divContainerOut.querySelectorAll('div').length === 0) {
         let num = selectNumDiv();
         drawDivs(num);
-        isErasing = false;
-    } else {
-        isErasing = false;
     }
+    isErasing = false;
 
 });
 
